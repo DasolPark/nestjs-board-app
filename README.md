@@ -73,21 +73,31 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 # Study
+* @(decorator): 말 그대로 ~을 꾸미다. 클래스를 @Module 데코레이터로 지정
+
+## Module
+
+## Controller
+
+### Handler
+@Get, @Post, @Patch, @Delete, ...
 
 ## service
+### @Injectable
+다른 곳에서 주입하여 사용 가능하다는 의미
 ```
 // As-is
-class boardsService() {
-  boardsService: boardsService;
+class BoardsController() {
+  boardsService: BoardsService;
 
-  constructor(boardsService: boardsService) {
+  constructor(boardsService: BoardsService) {
     this.boardsService = boardsService;
   }
 }
 
 // To-be
 // implicit declaration(Access modifier)
-class boardsService() {
-  constructor(private boardsService: boardsService);
+class BoardsController() {
+  constructor(private boardsService: BoardsService);
 }
 ```
