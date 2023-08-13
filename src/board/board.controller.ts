@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { BoardsService } from './boards.service';
+import { BoardsService } from './board.service';
 import { Board } from './board.model';
 
 @Controller('boards')
