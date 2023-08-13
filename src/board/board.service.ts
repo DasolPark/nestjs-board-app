@@ -3,7 +3,7 @@ import { Board, BoardStatus } from './board.model';
 import { v1 as uuid } from 'uuid'; // uuid의 v1버전을 사용하는데 이름은 uuid로 하겠다.
 
 @Injectable()
-export class BoardsService {
+export class BoardService {
   private boards: Board[] = [];
 
   getBoards(): Board[] {
