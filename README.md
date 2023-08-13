@@ -84,6 +84,7 @@ Nest is [MIT licensed](LICENSE).
 
 ### Handler
 @Get, @Post, @Patch, @Delete, ...
+- postman: method, Body(raw with JSON), { "blah": "blah" } for testing
 
 ## service
 ### @Injectable
