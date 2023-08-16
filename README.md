@@ -87,6 +87,7 @@ Nest is [MIT licensed](LICENSE).
 - postman: method, Body(raw with JSON), { "blah": "blah" } for testing
 - @Get('/:id'), @Param() or @Param('id')
 - @Delete('/:id'), @Param() or @Param('id')
+- @Patch('/:id/status'), @Param('id'), @Body('status')
 
 ## service
 ### @Injectable
