@@ -120,3 +120,53 @@ class BoardsController() {
 - 데이터 유효성을 체크하는데 효율적
 - 더 안정적인 코드로 만들어 줌. TypeScript의 Type으로도 사용됨
     - 즉, 이곳저곳 고쳐야 될 부분을 한 곳만 고쳐되 되게 만들어주는 마법을 제공
+
+## Pipe(NestJS Pipes)
+
+- Data Transformation
+  - E.g. string '7' -> integer 7
+- Data Validation
+  - E.g. checking length
+
+### Binding Pipes
+
+1. Parameter-level Pipes(<)
+
+특정한 파라미터에만 적용
+```
+@Post()
+@createBoard(
+  @Body('title', ParameterPipe) title,
+  @Body('description') description,
+) {}
+```
+2. Handler-level Pipes(<)
+
+모든 파라미터에 적용
+``` 
+@Post()
+@UsePipes(pipe)
+createBoard(
+    @Body('title') title,
+    @Body('description') description,
+) {}
+```
+3. Global Pipes(application-level)
+
+client에서 들어오는 모든 요청에 적용. 가장 상단 영역인 main.ts에 넣어주면 된다.
+```
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(GlobalPipes);
+  await app.listen(3000);
+}
+bootsrap();
+```
+
+### Built-in Pipes
+- ValidationPipe
+- ParseIntPipe
+- ParseBoolPipe
+- ParseArrayPipe
+- ParseUUIDPipe
+- DefaultValuePipe
