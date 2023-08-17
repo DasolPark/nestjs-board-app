@@ -43,6 +43,6 @@ export class BoardController {
     @Param('id') id: string,
     @Body('status') status: BoardStatus,
   ): Board {
-    return this.updateBoardStatus(id, status);
+    return this.boardService.updateBoardStatus(id, status);
   }
 }
