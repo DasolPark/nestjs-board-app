@@ -170,3 +170,9 @@ bootsrap();
 - ParseArrayPipe
 - ParseUUIDPipe
 - DefaultValuePipe
+
+### Require modules
+- class-validator
+- class-transformer
+- `npm install class-validator class-transformer --save`
+- https://github.com/nestjs/class-validator#manual-validation
