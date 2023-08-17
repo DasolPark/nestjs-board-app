@@ -176,3 +176,6 @@ bootsrap();
 - class-transformer
 - `npm install class-validator class-transformer --save`
 - https://github.com/nestjs/class-validator#manual-validation
+
+## Error handling
+- `throw new NotFoundException();`
