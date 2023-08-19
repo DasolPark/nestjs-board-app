@@ -188,3 +188,16 @@ bootsrap();
   - Add New Server -> Set General - name -> Set Connection - Host name/address, Post, Maintenance database, Username, Password -> SAVE
   - CREATED SERVER -> craete -> database -> Set General - Database -> SAVE
 - password: postgresql or postgres
+
+## ORM(TypeORM - Object Relational Mapping)
+- node.js에서 실행되고 TypeScript로 작성된 객체 관계형 매퍼 라이브러리
+- MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana 그리고 WebSQL과 같은 여러 데이터베이스를 지원
+
+### 특징과 이점
+- 모델을 기반으로 데이터 베이스 테이블 체계를 자동으로 생성
+- 데이터베이스에서 개체를 쉽게 삽입, 업데이트 그리고 삭제 할 수 있음
+- 테이블 간의 매핑(1:1, 1:n, n:n)을 만들 수 있음
+- 간단한 CLI 명령 제공
+- TypeORM은 간단한 코딩으로 ORM 프레임워크를 사용하기 쉬움
+- TypeORM은 다른 모듈과 쉽게 통합
+
