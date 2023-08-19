@@ -179,3 +179,12 @@ bootsrap();
 
 ## Error handling
 - `throw new NotFoundException();`
+
+## DB(Postgresql)
+
+- postgresql 13 (https://postgresapp.com/downloads.html)
+  - start
+- pgadminv4 v7.1 (https://www.postgresql.org/ftp/pgadmin/pgadmin4/v7.1/macos/)
+  - Add New Server -> Set General - name -> Set Connection - Host name/address, Post, Maintenance database, Username, Password -> SAVE
+  - CREATED SERVER -> craete -> database -> Set General - Database -> SAVE
+- password: postgresql or postgres
