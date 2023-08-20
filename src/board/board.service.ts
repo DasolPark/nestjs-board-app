@@ -3,6 +3,7 @@ import { CreateBoardDto } from './dto/create-board.dto';
 import { BoardRepository } from './board.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Board } from './board.entity';
+import { BoardStatus } from './board.status-enum';
 
 @Injectable()
 export class BoardService {
@@ -29,6 +30,16 @@ export class BoardService {
     if (result.affected === 0) {
       throw new NotFoundException(`Can't find board with id: ${id}`);
     }
+  }
+
+  async updateBoardStatus(id: number, status: BoardStatus): Promise<Board> {
+    const board = await this.getBoardById(id);
+
+    board.status = status;
+    await this.boardRepository.save(board);
+    // await this.boardRepository.update(id, { status });
+
+    return board;
   }
 
   // getBoards(): Board[] {
