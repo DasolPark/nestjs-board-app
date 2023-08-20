@@ -19,10 +19,12 @@ import { Board } from './board.entity';
 @Controller('board')
 export class BoardController {
   constructor(private boardService: BoardService) {}
-  // @Get('/')
-  // getBoards(): Board[] {
-  //   return this.boardService.getBoards();
-  // }
+
+  @Get('/')
+  async getBoards(): Promise<Board[]> {
+    return await this.boardService.getBoards();
+  }
+
   @Get('/:id')
   async getBoardById(@Param('id') id: number): Promise<Board> {
     return this.boardService.getBoardById(id);
