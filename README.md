@@ -139,6 +139,8 @@ class BoardsController() {
   @Body('title', ParameterPipe) title,
   @Body('description') description,
 ) {}
+
+/* implements PipeTransform */
 ```
 2. Handler-level Pipes(<)
 
@@ -211,3 +213,10 @@ bootsrap();
 ### Entity 생성
 - @Entity(): equivalent to `CREATE TABLE board`
 - @PrimaryGeneratedColumn(), @Column(), ...
+- `@Entity`, `extends BaseEntity`
+
+### Repository
+- 엔티티 개체와 함께 작동하며, 엔티티 찾기/삽입/업데이트/삭제 등 처리(Repository Pattern)
+- https://typeorm.delightful.studio/classes/_repository_repository_.repository.html
+- `@EntityRepository`, `extends Repository`
+- `imports: [TypeOrmModule.forFeature([BoardRepository])]`
