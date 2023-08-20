@@ -207,7 +207,7 @@ bootsrap();
 - @nestjs/typeorm: nest.js에서 TypeORM을 사용하기 위해 연동시켜주는 모듈
 - typeorm: TypeORM 모듈
 - pg: Postgres 모듈
-- `npm install pg typeorm @nestjs/typeorm --save`
+- `npm install pg typeorm @nestjs/typeorm --save` (typeorm@0.2.34, @nestjs/typeorm@8.0.1)
 - https://docs.nestjs.com/techniques/database
 
 ### Entity 생성
