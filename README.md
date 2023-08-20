@@ -77,10 +77,11 @@ Nest is [MIT licensed](LICENSE).
 - interface: 변수의 타입만 체크(VS class)
 - class: 변수의 타입 체크 & 인스턴스 생성 가능
 
-
 ## Module
+- nest g module [NAME] (g: generate)
 
 ## Controller
+- nest g controller [NAME] [--no-spec] (--no-spec: 테스트 코드 생성X)
 
 ### Handler
 @Get, @Post, @Patch, @Delete, ...
@@ -90,6 +91,7 @@ Nest is [MIT licensed](LICENSE).
 - @Patch('/:id/status'), @Param('id'), @Body('status')
 
 ## service
+- nest g service [NAME] [--no-spec]
 ### @Injectable
 다른 곳에서 주입하여 사용 가능하다는 의미
 ```
