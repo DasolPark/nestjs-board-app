@@ -201,9 +201,13 @@ bootsrap();
 - TypeORM은 간단한 코딩으로 ORM 프레임워크를 사용하기 쉬움
 - TypeORM은 다른 모듈과 쉽게 통합
 
-## Install
+### Install
 - @nestjs/typeorm: nest.js에서 TypeORM을 사용하기 위해 연동시켜주는 모듈
 - typeorm: TypeORM 모듈
 - pg: Postgres 모듈
 - `npm install pg typeorm @nestjs/typeorm --save`
 - https://docs.nestjs.com/techniques/database
+
+### Entity 생성
+- @Entity(): equivalent to `CREATE TABLE board`
+- @PrimaryGeneratedColumn(), @Column(), ...
