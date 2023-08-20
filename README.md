@@ -220,3 +220,9 @@ bootsrap();
 - https://typeorm.delightful.studio/classes/_repository_repository_.repository.html
 - `@EntityRepository`, `extends Repository`
 - `imports: [TypeOrmModule.forFeature([BoardRepository])]`
+```
+// Inject Repository to service
+constructor(
+  @InjectRepository(BoardRepository) private boardRepository: BoardRepository,
+) {}
+```
