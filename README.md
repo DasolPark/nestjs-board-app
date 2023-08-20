@@ -226,3 +226,4 @@ constructor(
   @InjectRepository(BoardRepository) private boardRepository: BoardRepository,
 ) {}
 ```
+- remove VS delete: remove는 존재하는 아이템만 제거할 수 있음(없으면 에러 발생), delete는 있으면 지우고 없으면 아무 영향 없음

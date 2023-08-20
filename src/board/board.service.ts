@@ -23,6 +23,14 @@ export class BoardService {
     return this.boardRepository.createBoard(createBoardDto);
   }
 
+  async deleteBoard(id: number): Promise<void> {
+    const result = await this.boardRepository.delete(id);
+
+    if (result.affected === 0) {
+      throw new NotFoundException(`Can't find board with id: ${id}`);
+    }
+  }
+
   // getBoards(): Board[] {
   //   return this.boards;
   // }
