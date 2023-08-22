@@ -229,3 +229,20 @@ constructor(
 ) {}
 ```
 - remove VS delete: remove는 존재하는 아이템만 제거할 수 있음(없으면 에러 발생), delete는 있으면 지우고 없으면 아무 영향 없음
+
+## Encrypt password
+- bcryptjs (`npm install bcryptjs --save`)
+### 1. Encryption key + 알고리즘(양방향)
+- https://www.online-toolz.com/tool/encrypt-text
+- 암/복호화 가능
+- 암호화 키가 노출되면 알고리즘은 대부분 오픈되어 있기 때문에 위험도 높음
+
+### 2. SHA256 같은 방식으로 HASH 저장(단방향)
+- https://emn178.github.io/online-tools/
+- 레인보우 테이블을 이용해 암호화된 비밀번호를 비교해서 비밀번호를 알아낼 수 있음
+- 1234 => 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, qwe123 => 18138372fad4b94533cd4881f03dc6c69296dd897234e0cee83f727e2e6b1f63 이런식으로 모든 값을 저장해 놓은 후 비교하여 계정 탈취 가능
+- 같은 문자에선 같은 해시가 결과로 나옴
+
+### 3. SALT + Plain password => Hash ✅
+- E.g. 1234 => adsfdasfg+1234 => fdslkmgslkm, 1234 => gfnklmerkgld+1234 => daslkgmdsaf
+- 같은 비밀번호여도 다르게 해시값이 저장될 수 있음
