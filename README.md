@@ -260,5 +260,11 @@ constructor(
   - Verify Signature: 토큰이 보낸 사람에 의해 서명되었으며 어떤 식으로든 변경되지 않았는지 확인하는 데 사용되는 서명. 서명은 헤더 및 페이로드 세그먼트, 서명 알고리즘, 비밀 또는 공개키를 사용하여 생성됨
 
 ### Installation
-- `npm i @nestjs/jwt @nestjs/passport jwt passport-jwt`
+- `npm i @nestjs/jwt @nestjs/passport jwt passport-jwt --save`
 - register jwt/passport module
+- `npm i @types/passport-jwt --save` to get ExtractJwt, Strategy
+
+### Usage
+- class JwtStrategy extends PassportStrategy(Strategy by jwt)
+- @UseGuards(@AuthGuard())
+  - middleware
