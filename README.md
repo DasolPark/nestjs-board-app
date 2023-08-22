@@ -232,6 +232,9 @@ constructor(
 
 ## Encrypt password
 - bcryptjs (`npm install bcryptjs --save`)
+- asynchrous
+- genSalt(), hash(password, salt)
+- compare(password, foundUser.password)
 ### 1. Encryption key + 알고리즘(양방향)
 - https://www.online-toolz.com/tool/encrypt-text
 - 암/복호화 가능
