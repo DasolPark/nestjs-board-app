@@ -1,7 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserRepository } from './user.repository';
 import { AuthCredentialDto } from './dto/auth-credential.dto';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable()
 export class AuthService {
@@ -11,5 +12,14 @@ export class AuthService {
 
   async signUp(authCredentialDto: AuthCredentialDto): Promise<void> {
     await this.userRepository.createUser(authCredentialDto);
+  }
+
+  async signIn({ username, password }: AuthCredentialDto): Promise<string> {
+    const user = await this.userRepository.findOne({ username });
+
+    if (user && (await bcrypt.compare(password, user.password))) {
+      return 'login success!😊';
+    }
+    throw new UnauthorizedException('login failed😢');
   }
 }
