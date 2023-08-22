@@ -249,3 +249,16 @@ constructor(
 ### 3. SALT + Plain password => Hash ✅
 - E.g. 1234 => adsfdasfg+1234 => fdslkmgslkm, 1234 => gfnklmerkgld+1234 => daslkgmdsaf
 - 같은 비밀번호여도 다르게 해시값이 저장될 수 있음
+
+## JWT(JSON Web Token)
+- https://jwt.io/
+- 당사자 간에 정보를 JSON 개체로 안전하게 전송하기 위한 컴팩트하고 독립적인 방식을 정의하는 개방형 표준(RFC 7519)
+- 디지털 서명이 되어 있으므로 신뢰할 수 있음
+- 3 segment
+  - Header: metadata about the token(type, hash algorithm SHA256, RSA, and ...)
+  - Payload: issuer, expiration time, subject, and etc
+  - Verify Signature: 토큰이 보낸 사람에 의해 서명되었으며 어떤 식으로든 변경되지 않았는지 확인하는 데 사용되는 서명. 서명은 헤더 및 페이로드 세그먼트, 서명 알고리즘, 비밀 또는 공개키를 사용하여 생성됨
+
+### Installation
+- `npm i @nestjs/jwt @nestjs/passport jwt passport-jwt`
+- register jwt/passport module
