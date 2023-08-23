@@ -270,6 +270,7 @@ constructor(
   - middleware
 
 ## Middlewares
+middleware -> guard -> interceptor (before) -> pipe -> controller -> service -> controller -> interceptor (after) -> filter (if applicable) -> client
 - Pipes: 요청 유효성 검사 및 페이로드 변환. 데이터를 예상한 대로 직렬화
 - Filters: 오류 처리. 특정 오류 처리기를 사용할 경로와 각 경로 주변의 복잡성을 관리하는 방법을 알 수 있음.
 - Guards: 인증. 지정된 경로로 통과할 수 있는 사람과 허용되지 않는 사람을 서버에 알려줌.
