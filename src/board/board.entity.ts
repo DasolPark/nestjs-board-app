@@ -22,7 +22,6 @@ export class Board extends BaseEntity {
   @Column()
   status: BoardStatus;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @ManyToOne((type) => User, (user) => user.boards, { eager: false })
+  @ManyToOne(() => User, (user) => user.boards, { eager: false })
   user: User;
 }

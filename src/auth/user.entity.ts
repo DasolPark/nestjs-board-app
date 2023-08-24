@@ -20,7 +20,6 @@ export class User extends BaseEntity {
   @Column()
   password: string;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  @OneToMany((type) => Board, (board) => board.user, { eager: true })
+  @OneToMany(() => Board, (board) => board.user, { eager: true })
   boards: Board[];
 }
