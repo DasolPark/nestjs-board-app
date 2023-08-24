@@ -30,6 +30,16 @@ export class BoardController {
     return await this.boardService.getBoards();
   }
 
+  @Get('/my')
+  async getMyBoards(@GetUser() user: User): Promise<Board[]> {
+    return await this.boardService.getMyBoards(user);
+  }
+
+  @Get('/my-with-builder')
+  async getMyBoardsWithQueryBuilder(@GetUser() user: User): Promise<Board[]> {
+    return await this.boardService.getMyBoardsWithQueryBuilder(user);
+  }
+
   @Get('/:id')
   async getBoardById(@Param('id') id: number): Promise<Board> {
     return this.boardService.getBoardById(id);

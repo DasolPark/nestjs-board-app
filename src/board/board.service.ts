@@ -16,6 +16,20 @@ export class BoardService {
     return await this.boardRepository.find();
   }
 
+  // v1
+  async getMyBoards(user: User): Promise<Board[]> {
+    return await this.boardRepository.find({ user });
+  }
+
+  // v2
+  async getMyBoardsWithQueryBuilder(user: User): Promise<Board[]> {
+    const query = this.boardRepository.createQueryBuilder('board');
+
+    query.where('board.userId = :userId', { userId: user.id });
+
+    return await query.getMany();
+  }
+
   async getBoardById(id: number): Promise<Board> {
     const board = await this.boardRepository.findOne(id);
 
