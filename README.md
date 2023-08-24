@@ -275,3 +275,8 @@ middleware -> guard -> interceptor (before) -> pipe -> controller -> service -> 
 - Filters: 오류 처리. 특정 오류 처리기를 사용할 경로와 각 경로 주변의 복잡성을 관리하는 방법을 알 수 있음.
 - Guards: 인증. 지정된 경로로 통과할 수 있는 사람과 허용되지 않는 사람을 서버에 알려줌.
 - interceptors: 응답 매핑 및 캐시 관리와 함께 요청 로깅과 같은 전후 미들웨어.
+
+## Custom decorator
+- createParamDecorator 같은 걸로 만들 수 있다.
+- ctx: ExecutionContext
+- `ctx.switchToHttp().getRequet()`
