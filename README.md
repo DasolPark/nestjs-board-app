@@ -300,3 +300,19 @@ middleware -> guard -> interceptor (before) -> pipe -> controller -> service -> 
 - Development
 - Staging
 - Production
+
+## Configuration
+- 환경(개발/운영)에 따라 다르게 설정이 필요함
+- 노출되면 안되는 코드도 있음
+- 위 내용을 설정파일에 넣어서 관리
+
+### 설정 파일
+- runtime 도중에 바뀌는 것이 아닌 앱이 시작할 때 로드가 됨
+- 다양한 파일 형식이 있음(E.g. XML, JSON, YAML, etc)
+
+### Codebase VS Environment Variables
+- Codebase: XML, JSON, YAML
+- Env Var: password, secret key, API key, etc.
+
+### Module
+- `npm i config --save`
