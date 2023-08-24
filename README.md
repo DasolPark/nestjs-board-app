@@ -230,6 +230,12 @@ constructor(
 ```
 - remove VS delete: remove는 존재하는 아이템만 제거할 수 있음(없으면 에러 발생), delete는 있으면 지우고 없으면 아무 영향 없음
 
+### Relation
+관계를 형성함으로써 연결 관계에 있는 정보를 넣어줄 수 있다
+- OneToMany
+- ManyToOne
+- ManyToMany
+
 ## Encrypt password
 - bcryptjs (`npm install bcryptjs --save`)
 - asynchrous
