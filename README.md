@@ -286,3 +286,17 @@ middleware -> guard -> interceptor (before) -> pipe -> controller -> service -> 
 - createParamDecorator 같은 걸로 만들 수 있다.
 - ctx: ExecutionContext
 - `ctx.switchToHttp().getRequet()`
+
+## Logging
+- 원래 로그는 개발을 하면서 넣는 게 정석이다. (기능 하나 당)
+- express.js에선 보통 winston을 쓰지만, 여기선 nest.js build-in `Logger` 이용
+### log의 종류
+- Log: 중요한 정보의 범용 로깅
+- Warning: 치명적이거나 파괴적이지 않은 문제
+- Error: 치명적이거나 파괴적인 문제
+- Verbose: 응용 프로그램의 동작에 대한 통찰력을 제공(운영자용)
+
+### Log level
+- Development
+- Staging
+- Production
